@@ -1,3 +1,6 @@
+# iex -r 01.ex
+# iex> DayOne.partN "01-input.txt"
+
 defmodule DayOne do
   def partOne(str) do
     {:ok, file} = File.read(str)
