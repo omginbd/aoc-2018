@@ -20,7 +20,6 @@ defmodule Aoc.D3 do
   end
 
   def findUniqueCut(fMap, [{id, _, _, w, h} = claim | rest]) do
-    IO.inspect(claim)
     case Enum.count(fMap, fn({_, val})-> val == id end) == w * h do
       true -> claim
       false -> findUniqueCut(fMap, rest)
