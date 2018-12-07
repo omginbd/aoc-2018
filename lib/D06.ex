@@ -1,6 +1,10 @@
 defmodule Aoc.D6 do
   alias Aoc.Utils
 
+  @doc """
+  iex> Aoc.D6.p1("inputs/06-input.txt")
+  3907
+  """
   def p1(filename) do
     landmarks =
       filename
@@ -20,6 +24,11 @@ defmodule Aoc.D6 do
     )
   end
 
+  @doc """
+  iex> Aoc.D6.p2("inputs/06-input.txt")
+  42036
+  """
+
   def p2(filename) do
     landmarks =
       filename
@@ -31,6 +40,27 @@ defmodule Aoc.D6 do
     landmarks
     |> build_map_p2()
     |> Enum.count(& &1)
+  end
+
+  def visualize(filename) do
+    landmarks =
+      filename
+      |> File.read!()
+      |> Utils.parseLinesFromFile()
+      |> insert_landmarks(%{}, 0)
+      |> normalize_landmarks()
+
+    landmarks
+    |> build_map()
+    |> build_output_string()
+  end
+
+  def build_output_string(map) do
+    {width, height} = get_map_dimensions(map)
+
+    for x <- width, y <- height, into: "" do
+      <<Integer.to_string(Map.get(map, {x, y}))>>
+    end
   end
 
   def build_map_p2(landmarks) do
