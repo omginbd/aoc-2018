@@ -6,5 +6,6 @@ defmodule AocTest do
   # doctest Aoc.D4
   # doctest Aoc.D5
   # doctest Aoc.D6
-  doctest Aoc.D7
+  # doctest Aoc.D7
+  doctest Aoc.D8
 end
