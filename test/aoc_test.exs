@@ -10,5 +10,6 @@ defmodule AocTest do
   # doctest Aoc.D8
   # doctest Aoc.D9
   # doctest Aoc.D10
-  doctest Aoc.D11
+  # doctest Aoc.D11
+  doctest Aoc.D12
 end
